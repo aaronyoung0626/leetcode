@@ -9,8 +9,7 @@
 给定一个字符串S和一个字典dict，判断S能否被字典内的字符串所构成，如果可以的话返回true(Word break II需要输出这个最优值)
 ###解题思路：
 第一种思路：dfs
-
-···
+```
 class Solution {
 public:
     bool wordBreak(string s, unordered_set<string>& wordDict) {
@@ -28,7 +27,7 @@ public:
 private:
     unordered_set<string> cache;
 };
-···C++
+```
 
 第二种思路：
 动态规划的思想
@@ -74,8 +73,10 @@ public:
         }
     }
 };
-```C++
+```
+
 dfs过程中重建，注意由于dfs是穷举，所以可能会出现重复计算的情形，加cache
+```
 class Solution {
 public:
     vector<string> wordBreak(string s, unordered_set<string>& wordDict) {
@@ -96,3 +97,4 @@ public:
 private:
     unordered_map<string,vector<string>> cache;
 };
+```
